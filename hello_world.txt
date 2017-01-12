@@ -1,0 +1,13 @@
+Git development began in April 2005 after many developers of the Linux kernel gave up access to Bitkeepr, 
+a proprietary source control management system that had previoulsy been used to maintain the project. The 
+copyright holder of Bitkeeper, larry McVoy, had withdrawn gratis use of the product after claiming that Andrew
+Tridgell had reverse-engineered the Bitkeeper protocols. Torvalds wanted a distributed system that he could use
+like Bitkeeper, but none of the available free systems met his needs, particularly in terms of performance. 
+Torvalds took an example of an SCM system requiring thirty seconds to apply a patch and update all associate
+metadata, and noted that this would not scale to the needs of Linux kernel development, where syncing whith
+
+The first merge of multiple branches was done on 18 April. Torvalds achived his performance goals; on 29 April
+the nascent Git was benchmarked recording patches to the Linux kernel tree at the rate of 6.7 per second
+On 16 June Git managed the kernel 2.6.12 release. Torvalds turned over maintenance on 26 july 2005
+to Junio Hamano, a major contributor to the project. Hamano was responsible for the 1.0 release on 21 Dec 2005,
+and remains the project's maintainer.
