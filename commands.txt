@@ -1,0 +1,64 @@
+http://www.thegeekstuff.com/2011/08/yum-command-examples/
+https://www.godaddy.com/garage/tech/config/how-to-install-postgresql-on-centos-7/
+http://www.cyberciti.biz/tips/postgres-allow-remote-access-tcp-connection.html
+tpc-ds
+yum install make and yum install gcc
+http://www.aodba.com/?p=1182&la
+
+./dsqgen db2.tpl -dir /tmp/v2.1.0/query_templates/
+
+load.sh :
+for f in call_center customer_address dbgen_version item store web_returns catalog_page customer household_demographics promotion store_returns web_sales catalog_returns customer_demographics income_band reason store_sales warehouse web_site catalog_sales date_dim inventory ship_mode time_dim web_page
+do
+d1=$(date)
+echo $i.sql >> tmp.txt
+vsql -d tpc_ds -f /var/lib/pgsql/tests/final1/$i.sql >> tmp.txt
+d2=$(date)
+echo $i.sql $(( ($(date -d "$d2" +%s) - $(date -d "$d1" +%s)))) >> time.txt
+sleep 25
+done
+
+time.sh :
+for ((i=5;i<=103;i++))
+do
+d1=$(date)
+echo $i.sql >> tmp.txt
+psql -d tpc_ds -f /var/lib/pgsql/tests/final1/$i.sql >> tmp.txt
+d2=$(date)1
+echo $i.sql $(( ($(date -d "$d2" +%s) - $(date -d "$d1" +%s)))) >> time.txt
+sleep 20
+done
+
+psql -d postgres -c "alter table web_site add column dummy int default null"
+psql -d postgres -c "\copy web_site from '/newdisk/10gbdat/web_site.dat' with (delimiter '|', NULL '')"
+
+
+call_center customer_address dbgen_version item store web_returns catalog_page customer household_demographics promotion store_returns web_sales catalog_returns customer_demographics income_band reason store_sales warehouse web_site catalog_sales date_dim inventory ship_mode time_dim web_page
+
+wc -l store_sales.dat ( number of lines in the file)
+
+
+do
+echo $f
+d1=$(date)
+psql -d tpcds100gb -c "alter table $f add column dummy int default null"
+psql -d tpcds100gb -c "\copy $f from '/var/lib/pgsql/9.4/100gbdat/`echo $f`_1_10.dat' with (delimiter '|', NULL '')"
+d2=$(date)
+echo $f_1_10 $(( ($(date -d "$d2" +%s) - $(date -d "$d1" +%s)))) >> time.txt
+done
+
+
+do
+echo customer
+d1=$(date)
+psql -d tpcds100gb -c "\copy customer from '/var/lib/pgsql/9.4/100gbdat/customer_1_10.dat' with (delimiter '|', NULL '')"
+d2=$(date)
+echo $f_1_10 $(( ($(date -d "$d2" +%s) - $(date -d "$d1" +%s)))) >> time.txt
+done
+
+
+catalog_returns catalog_sales customer customer_address customer_demographics inventory store_returns store_sales web_returns web_sales     
+
+
+
+
