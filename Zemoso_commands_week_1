@@ -1,0 +1,83 @@
+Creating a new folder:
+-- sudo mkdir /home/srinivas/Sample_folder(Admin)
+-- sudo mkdir /home/saisrinivas/Sample_folder(user account)
+
+Creating a new text file:
+-- sudo touch /home/srinivas/Sample_folder/commands.txt(Admin)
+-- sudo touch /home/saisrinivas/Sample_folder/commands.txt(user account)
+
+Writing in a text file using nano command:
+-- sudo nano /home/folder1/text1.txt 
+
+Copying content from one file to another:
+-- sudo cp /home/folder1/text1.txt /home/folder2/text2.txt
+
+Moving one folder to another:
+--sudo mv /home/folder1 /home/folder2
+
+Login into different account:
+--ssh saisrinivas@10.147.206.174
+
+Copying files from one sytem to another:
+--sudo scp text1.txt srinivas@10.147.206.174
+
+ls -lR > all.txt:
+--The file contains all the permissions of the files in that particular folder
+
+Creating files using cat command:
+--cat > a.txt
+
+Creating file with 0 byte:
+--> c.txt
+
+Copying two files:
+--sudo tar cf file.txt a.txt b.txt
+
+Installing Github
+--sudo apt-get install git
+
+Configuring GitHub
+--git config --global user.name "user_name"
+--git config --global user.email "email_id"
+
+Creating Local Repository:
+--sudo git init first_git_repo
+
+Committing changes made to the index
+--git commit -m "some_message"
+
+pushing:
+--git remote add origin https://github.com/user_name/Mytest.git
+--git push origin master
+
+Replacing Words in a text file:
+--sed -i 's/to/srinivas/g' hello_world.txt
+
+Creating a new git-branch
+--sudo git branch new-branch
+
+Renaming a file:
+--mv /home/user/oldname /home/user/newname
+
+merging a  branch to guthub:
+git merge new-branch --no-ff
+
+cloning a github repository to a folder:
+git clone git@github.com:username campus-training
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
